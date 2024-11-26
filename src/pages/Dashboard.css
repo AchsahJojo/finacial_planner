@@ -1,0 +1,31 @@
+/* src/pages/Dashboard.css */
+.dashboard-container {
+    font-family: 'Arial', sans-serif; /* Default font for the container */
+    text-align: center; /* Center text horizontally */
+    background-color: #f0f0f0; /* Change this to your desired background color */
+  }
+  
+  .dashboard-banner {
+    background-color: #000627; /* Dark blue background color */
+    color: rgba(221, 218, 218, 0.712); /* White text color */
+    padding: 20px; /* Padding around the banner */
+    margin-bottom: 20px; /* Space below the banner */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo and title */
+  }
+  
+  .banner-logo {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between the logo and the title */
+  }
+  
+  .banner-title {
+    font-family: 'Georgia', serif; /* Different font for the banner title */
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0; /* Remove default margin */
+    flex-grow: 1; /* Allow the title to grow and take available space */
+    text-align: center; /* Center the title text */
+  }
