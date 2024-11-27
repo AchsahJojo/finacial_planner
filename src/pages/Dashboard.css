@@ -96,7 +96,7 @@ h2{
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid; /* Cursor effect */
-  animation: typewriter 4s steps(40, end) 1s 1 normal both, blinkTextCursor 500ms steps(20) 3.5s 1 normal both;
+  animation: typewriter 4s steps(40, end) 1s 1 normal both, blinkTextCursor 500ms steps(20) 4.5s 1 normal both;
   color: white; /* Adjust text color for better readability */
 }
 
