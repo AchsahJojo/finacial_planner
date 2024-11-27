@@ -1,31 +1,122 @@
 /* src/pages/Dashboard.css */
+@import url('https://fonts.googleapis.com/css2?family=Obliqua+Sans&display=swap');
+
 .dashboard-container {
-    font-family: 'Arial', sans-serif; /* Default font for the container */
-    text-align: center; /* Center text horizontally */
-    background-color: #f0f0f0; /* Change this to your desired background color */
+  font-family: 'Obliqua Sans', sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.dashboard-banner {
+  background-color: #000627;
+  color: rgba(221, 218, 218, 0.712);
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner-logo {
+  width: 125px;
+  height: auto;
+  margin-right: 0.5px;
+}
+
+.banner-title {
+  font-family: 'Georgia', serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.header-icon {
+  font-family: 'Georgia', serif;
+  width: 36px; /* Adjust the width as needed */
+  height: 36px; /* Adjust the height as needed */
+  margin-right: 8px; /* Space between the icon and the text */
+  filter: brightness(0.5);
+}
+
+.dashboard-title {
+  font-family: 'Georgia', serif;
+  font-size: 3.5em; /* Adjust the font size as needed */
+}
+
+.overview-container {
+  background-image: url('../components/assets/AdobeStock_473777667.jpeg'); /* Update the path to your Adobe Stock image */
+  background-size: cover;
+  background-position: center;
+  align-items: left;
+  font-size: 1em;
+  padding: 150px; /* Adjust padding as needed */
+  border-radius: 8px; /* Optional: add border radius */
+}
+
+
+h2{
+  font-family: 'Georgia', serif;
+  background-color: #7f8ee0;
+  font-size: 3em;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .dashboard-banner {
-    background-color: #000627; /* Dark blue background color */
-    color: rgba(221, 218, 218, 0.712); /* White text color */
-    padding: 20px; /* Padding around the banner */
-    margin-bottom: 20px; /* Space below the banner */
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Space between logo and title */
+  to {
+    opacity: 1;
   }
-  
-  .banner-logo {
-    width: 150px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Space between the logo and the title */
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
   }
-  
-  .banner-title {
-    font-family: 'Georgia', serif; /* Different font for the banner title */
-    font-size: 2.5em;
-    font-weight: bold;
-    margin: 0; /* Remove default margin */
-    flex-grow: 1; /* Allow the title to grow and take available space */
-    text-align: center; /* Center the title text */
+  to {
+    width: 100%;
   }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(6, 14, 126, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.overview-text {
+  font-size: 1.5em; /* Adjust the font size as needed */
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid; /* Cursor effect */
+  animation: typewriter 4s steps(40, end) 1s 1 normal both, blinkTextCursor 500ms steps(20) 4.5s 1 normal both;
+  color: white; /* Adjust text color for better readability */
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+.form-placeholder1 {
+  text-align: left; /* Aligns the text to the left */
+  margin: 40px 0; /* Increased margin for spacing */
+  padding-left: 25px; /* Adds indentation */
+}
+
+.form-placeholder2 {
+  text-align: right; /* Aligns the text to the right */
+  margin: 40px 0; /* Increased margin for spacing */
+  padding-right: 25px; /* Adds indentation */
+}
