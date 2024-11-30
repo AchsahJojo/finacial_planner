@@ -5,8 +5,15 @@ import logo from '../components/assets/logo.png';
 import budgetIcon from '../components/assets/budget.png';
 import expensesIcon from '../components/assets/expenses.png';
 import targetIcon from '../components/assets/target.png';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate('/GoalsPage');
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -56,7 +63,7 @@ const Dashboard = () => {
         <img src={targetIcon} alt="Goals Icon" className="header-icon" />
         Goals Form
       </h2>
-      <p className="form-placeholder1">Put your form here.</p>
+      <button onClick={handleNavigate}>Go to Goals Form</button>
     </div>
   );
 };
