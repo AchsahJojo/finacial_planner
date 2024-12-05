@@ -1,13 +1,30 @@
 // src/components/ExpenseEntryForm.js
 import React, { useState } from 'react';
-const ExpenseEntryForm = () => {
+import { Modal, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const ExpenseEntryForm = ({ addExpense }) => {
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
+  const [show, setShow] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    addExpense({ amount, description });
     // Handle form submission
-    console.log({ amount, description });
+    setAmount('');
   };
+
+  const handleGoBack = () => {
+    navigate('/');
+  };
+  
   return (
     <form onSubmit={handleSubmit}>
       <div>
