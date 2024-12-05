@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import ExpenseEntryForm from '../components/ExpenseEntryForm';
 
 const ExpensesPage = () => {
-  const [expenses, addExpenses] = useState([]);
+  const [expenses, setExpenses] = useState([]);
 
   // Load expenses from local storage when the component mounts
   useEffect(() => {
     const storedExpenses = localStorage.getItem('expenses');
     if (storedExpenses) {
-      addExpenses(JSON.parse(storedExpenses));
+      setExpenses(JSON.parse(storedExpenses));
     }
   }, []);
 
@@ -18,7 +18,7 @@ const ExpensesPage = () => {
   }, [expenses]);
 
   const addExpense = (expense) => {
-    addExpenses([...expenses, expense]);
+    setExpenses([...expenses, expense]);
   };
 
   return (
@@ -30,8 +30,8 @@ const ExpensesPage = () => {
         <ul className="list-group">
           {expenses.map((expense, index) => (
             <li key={index} className="list-expense-item">
-              <strong>Expense:</strong> {expense.expense} <br />
-              <strong>Descriptoin:</strong> {expense.description}
+              <strong>Expense:</strong> {expense.amount} <br />
+              <strong>Description:</strong> {expense.description}
             </li>
           ))}
         </ul>
