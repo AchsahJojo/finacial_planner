@@ -2,23 +2,23 @@ import React, { useState, useEffect } from 'react';
 import ExpenseEntryForm from '../components/ExpenseEntryForm';
 
 const ExpensesPage = () => {
-  const [goals, setGoals] = useState([]);
+  const [expenses, addExpenses] = useState([]);
 
-  // Load goals from local storage when the component mounts
+  // Load expenses from local storage when the component mounts
   useEffect(() => {
-    const storedGoals = localStorage.getItem('goals');
-    if (storedGoals) {
-      setGoals(JSON.parse(storedGoals));
+    const storedExpenses = localStorage.getItem('expenses');
+    if (storedExpenses) {
+      addExpenses(JSON.parse(storedExpenses));
     }
   }, []);
 
-  // Save goals to local storage whenever the goals state changes
+  // Save expenses to local storage whenever the expenses state changes
   useEffect(() => {
-    localStorage.setItem('goals', JSON.stringify(goals));
-  }, [goals]);
+    localStorage.setItem('expenses', JSON.stringify(expenses));
+  }, [expenses]);
 
-  const addGoal = (goal) => {
-    setGoals([...goals, goal]);
+  const addExpense = (expense) => {
+    addExpenses([...expenses, expense]);
   };
 
   return (
